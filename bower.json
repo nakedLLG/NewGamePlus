@@ -1,0 +1,30 @@
+{
+  "name": "src",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "luciangombos <nakeddubber@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "jquery": "~2.1.4",
+    "ng-file-upload": "~9.0.13",
+    "angular-toastr": "~1.5.0",
+    "angular-resource": "~1.4.7"
+  }
+}

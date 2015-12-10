@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Shopping Cart</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="cart-info">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="image">Image</th>
+                    <th>Product</th>
+                    <th>Brand</th>
+                    <th class="total">Price</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="cart in cartList">
+                    <input type="hidden" ng-model="cart._id">
+                    <td class="image"><img alt="IMAGE" ng-src="images/{{ cart.image }}"></td>
+                    <td class="name"><a href="product.html">{{ cart.product }}</a></td>
+                    <td>{{ cart.brand }} </td>
+                    <td class="total"> {{ cart.price.toLocaleString() }} DKK</td>
+                    <td class="quantity">
+                        <button class="btn" ng-click="removeItem(cart._id)"><img src="images/remove.png"></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-sm-4 col-sm-offset-8">
+        <div class="cart-totals">
+            <table class="table">
+                <tbody><tr>
+                    <th>Cart Subtotal</th>
+                    <td>{{ getTotal() }} DKK</td>
+                </tr>
+                <tr>
+                    <th>Shipping</th>
+                    <td>Free Shipping</td>
+                </tr>
+                <tr>
+                    <th><span>Order Total</span></th>
+                    <td>{{ getTotal() }} DKK</td>
+                </tr>
+                </tbody></table>
+            <p>
+                <a class="btn btn-primary" href="#/checkout/">
+                    Proceed to Checkout
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</div>

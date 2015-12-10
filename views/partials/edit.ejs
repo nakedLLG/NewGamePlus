@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Edit Product</h2>
+    </div>
+</div>
+
+<div class="row product-management">
+    <div class="col-md-12">
+        <form class="form-horizontal" ng-submit="updateProduct()">
+            <div class="form-group">
+                <label class="control-label col-md-4" for="Name">Name</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" ng-model="product.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="Price">Price</label>
+                <div class="col-md-8">
+                    <input type="text" id="Price" class="form-control" ng-model="product.price">
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="control-label col-md-4" for="headBrand">Head Brand</label>-->
+                <!--<div class="col-md-8">-->
+                    <!--<input type="text" class="form-control" ng-model="product.headBrand">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="control-label col-md-4" for="brand">Brand</label>
+                <div class="col-md-8">
+                    <input type="text" id="brand" class="form-control" ng-model="product.brand">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="headImage">Image <small>(try product-car.png or placeholder.jpg)</small></label>
+                <div class="col-md-8">
+                    <input type="text" id="image" class="form-control" ng-model="product.image">
+                </div>
+            </div>
+            <!---<div class="form-group">
+                <label class="control-label col-md-4" for="images">Images</label>
+                <div class="col-md-8">
+                    <input type="text" id="images" class="form-control" ng-model="product.images">
+                </div>
+            </div>--->
+            <div class="form-group">
+                <label class="control-label col-md-4" for="description">Description</label>
+                <div class="col-md-8">
+                    <textarea rows="4" class="form-control" ng-model="product.description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button class="btn btn-success" type="submit">Save</button>
+                    <a href="#/management" class="btn btn-primary">Return</a>
+                </div>
+            </div>
+            <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%"
+             ng-bind="picFile.progress + '%'"></div>
+      </span>
+        </form>
+    </div>
+</div>

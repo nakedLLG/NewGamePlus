@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-3 left-menu">
+        <div>
+
+            <div class="brando" ng-repeat="headBrand in categories">
+                <h3>{{ headBrand.headBrand }}</h3>
+                <ul ng-model="query">
+                    <li ng-repeat="brand in headBrand.brands" ng-click="select(brand)"  ng-class="{ active: isActive(brand)}">
+                        <a ng-click="query.brand = brand"> {{ brand }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cat_header">
+                    <h2>{{ query.brand }}</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="search">
+        Search game: <input type="text" placeholder="My game" ng-model="query">
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="product in products | filter:query">
+                <div class="product">
+                    <a href="#/games/{{product.id}}"><img height="220" width="320" alt="game" src="/images/{{ product.image }}"></a>
+                    <div class="name">
+                        <a href="#/games/{{product.id}}"> {{ product.name }}</a>
+                    </div>
+                    <div class="price">
+                        <p> {{ product.price.toLocaleString() }} DKK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

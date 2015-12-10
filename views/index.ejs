@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="Main">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Game+</title>
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="libs/angular-toastr/dist/angular-toastr.css" />
+</head>
+<body>
+<div class="page-container">
+  <div class="header">
+    <nav class="navbar container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#/products" class="navbar-brand">
+          <img src="images/controller.png" alt="Games">Games
+        </a>
+
+      </div>
+      <div class="navbar-collapse collapse navbar-right" ng-controller="indexController">
+        <ul class="nav navbar-nav">
+          <li><a href="#/products">Games</a></li>
+
+          <li ng-hide="identity.isAuthenticated()"><a href="#/account">Login</a></li>
+          <li ng-show="identity.currentUser.isAdmin()"><a href="#/management">Management</a></li>
+          <li ng-show="identity.isAuthenticated()"><small>{{ identity.currentUser.email }}</small></li>
+          <li ng-show="identity.isAuthenticated()"><button class="btn btn-default btn-sm" ng-click="logout()">Log out</button></li>
+        </ul>
+        <ul class="nav navbar-right cart">
+          <li class="dropdown">
+            <a href="cart.html" class="dropdown-toggle" data-toggle="dropdown"><span>{{ cartList.length }}</span></a>
+            <div class="cart-info dropdown-menu">
+              <table class="table">
+                <thead>
+                </thead>
+                <tbody>
+                <tr ng-repeat="cart in cartList">
+                  <input type="hidden" ng-model="cart._id">
+                  <td class="image"><img alt="IMAGE" class="img-responsive" src="images/{{ cart.image }}"></td>
+                  <td class="name"><a href="#/cart">{{ cart.product }}</a></td>
+                  <td class="total">{{ cart.price }}</td>
+                  <td class="remove"><button class="btn" ng-click="removeItem(cart._id)"><img src="images/remove.png"></button></td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="cart-total">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><b>Sub-Total: </b></td>
+                    <td> {{ getTotal() }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Total: </b></td>
+                    <td> {{ getTotal() }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="checkout"><a href="#/cart/" class="ajax_right">View Cart</a> | <a href="#/checkout/" class="ajax_right">Checkout</a></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container" ng-view>
+
+  </div>
+
+  <div class="footer brown">
+
+  </div>
+</div>
+
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+<script src="libs/angular-resource/angular-resource.min.js"></script>
+<script src="libs/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/services/products.service.js"></script>
+<script src="app/services/cart.service.js"></script>
+<script src="app/services/user.service.js"></script>
+<script src="app/controllers/products.controller.js"></script>
+<script src="app/controllers/product.controller.js"></script>
+<script src="app/controllers/management.controller.js"></script>
+<script src="app/controllers/cart.controller.js"></script>
+<script src="app/controllers/account.controller.js"></script>
+<script src="app/common/Identity.js"></script>
+<script src="app/common/userResource.js"></script>
+<script src="app/common/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Add Product</h2>
+    </div>
+</div>
+
+<div class="row product-management">
+    <div class="col-md-12">
+        <form name="myForm" class="form-horizontal" ng-submit="addProduct()">
+            <div class="form-group">
+                <label class="control-label col-md-4" for="Name">Name</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" ng-model="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="Price">Price</label>
+                <div class="col-md-8">
+                    <input type="text" id="Price" class="form-control"  ng-model="price">
+                </div>
+            </div>
+            <!---<div class="form-group">
+                <label class="control-label col-md-4" for="headBrand">Head Brand</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control"  ng-model="headBrand">
+                </div>
+            </div>--->
+            <div class="form-group">
+                <label class="control-label col-md-4" for="brand">Brand</label>
+                <div class="col-md-8">
+                    <input type="text" id="brand" class="form-control"  ng-model="brand">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="headImage">Image <small>(try product-car.png or placeholder.jpg)</small></label>
+                <div class="col-md-8">
+                    <input type="text" id="image" class="form-control"  ng-model="image">
+                </div>
+            </div>
+            <!---<div class="form-group">
+                <label class="control-label col-md-4" for="images">Images</label>
+                <div class="col-md-8">
+                    <input type="text" id="images" class="form-control"  ng-model="images">
+                </div>
+            </div>--->
+            <div class="form-group">
+                <label class="control-label col-md-4" for="description">Description</label>
+                <div class="col-md-8">
+                    <textarea rows="4" class="col-md-12"  ng-model="description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button class="btn btn-success" type="submit">Add</button>
+                    <a href="#/management" class="btn btn-primary">Return</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

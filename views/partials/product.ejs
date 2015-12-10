@@ -1,0 +1,43 @@
+<div class="row product-info">
+    <div class="col-md-6">
+        <img ng-model="product.image" height="400" width="500" ng-src="/images/{{ mainImageUrl }}" >
+
+        <!---<ul class="product-thumbs">
+            <li ng-repeat="img in product.images">
+                <img height="60" width="60" ng-src="/images/{{img}}" ng-click="setImage(img)">
+            </li>
+        </ul>--->
+    </div>
+    <div class="col-md-6">
+        <h1 ng-model="product.name">{{ product.name }}</h1>
+        <div class="line"></div>
+        <ul>
+            <li ng-model="product.brand"><span>Brand:</span> {{ product.brand }}</li>
+            <!--<li ng-model="product.headBrand"><span>Head Brand:</span> {{ product.headBrand }}</li>-->
+        </ul>
+        <div class="price">
+            Price <strong ng-model="product.price">{{ product.price.toLocaleString() }} DKK</strong>
+        </div>
+        <div class="line"></div>
+
+        <form class="form-inline">
+            <button class="btn btn-primary" type="button" ng-click="addToCart()">Add to Cart</button>
+        </form>
+
+        <div class="tabs">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#home">Description</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="home"> {{ product.description }} </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+</script>
