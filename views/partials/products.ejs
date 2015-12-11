@@ -2,10 +2,10 @@
     <div class="col-md-3 left-menu">
         <div>
 
-            <div class="brando" ng-repeat="headBrand in categories">
-                <h3>{{ headBrand.headBrand }}</h3>
+            <div class="brando" ng-repeat="platform in categories">
+                <h3>{{ platform.platform }}</h3>
                 <ul ng-model="query">
-                    <li ng-repeat="brand in headBrand.brands" ng-click="select(brand)"  ng-class="{ active: isActive(brand)}">
+                    <li ng-repeat="brand in platform.brands" ng-click="select(brand)"  ng-class="{ active: isActive(brand)}">
                         <a ng-click="query.brand = brand"> {{ brand }}</a>
                     </li>
                 </ul>

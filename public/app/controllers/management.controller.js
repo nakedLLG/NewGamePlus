@@ -24,9 +24,9 @@
         $scope.addProduct = function(){
             var id = $scope.name.replace(/\s+/g, '-').toLowerCase();
             var car = { 'id': id, 'name': $scope.name, 'price': $scope.price, 'brand': $scope.brand,
-                'image': $scope.image, 'description': $scope.description }; //'headBrand': $scope.headBrand
+                'image': $scope.image, 'description': $scope.description };
 
-            var category = { 'id': $scope.brands, 'brands': [$scope.brand] }; //, 'headBrand': $scope.headBrand
+            var category = { 'id': $scope.brands, 'brands': [$scope.brand] };
             productsService.createProduct(car);
             productsService.createBrand(category);
             $location.path("/management/");
@@ -36,7 +36,7 @@
         $scope.updateProduct = function() {
             var id = $scope.product.name.replace(/\s+/g, '-').toLowerCase();
             var car = { 'id': id, 'name': $scope.product.name, 'price': $scope.product.price,
-                'brand': $scope.product.brand, 'image': $scope.image, 'description': $scope.product.description };//, 'headBrand': $scope.product.headBrand
+                'brand': $scope.product.brand, 'image': $scope.image, 'description': $scope.product.description };
             productsService.updateProduct(car, $scope.product.id);
             $location.path("/management/");
             toastr.success('Game is updated');
@@ -45,7 +45,7 @@
         $scope.deleteProduct = function(){
             productsService.deleteProduct($scope.product.id);
             $location.path("/management/");
-            toastr.success('Car is deleted');
+            toastr.success('Game is deleted');
         };
 
 

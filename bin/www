@@ -1,11 +1,11 @@
-#!/usr/bin/env node
+
 
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
-var debug = require('debug')('brokercars:server');
+var debug = require('debug')('gametest:server');
 var http = require('http');
 
 /**
@@ -50,7 +50,7 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ Event listener for HTTP server "error" event.
  */
 
 function onError(error) {

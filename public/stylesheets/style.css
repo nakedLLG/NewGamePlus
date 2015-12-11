@@ -2,7 +2,7 @@ body {
   font-family: 'Open sans', helvetica, Arial;
   background: #00b3ee;
   margin: 0;
-  color: #fff;
+  color: #000000;
   line-height: 1.4;
 }
 
@@ -231,7 +231,7 @@ input[type="text"],label {
 }
 
 .cart .cart-info {
-  /* width:260px; */
+
 }
 
 @media (min-width: 768px) {
@@ -344,6 +344,7 @@ td.image img {
 
 .left-menu {
   margin-bottom: 20px;
+  padding-top: 80px;
 }
 
 .left-menu > div {
@@ -566,7 +567,7 @@ td.image img {
 }
 
 .btn-primary {
-  background-color:#0b97c4;
+  background-color:#4cae4c;
   color:#fff;
   padding:12px 33px 10px;
   transition:all 0.4s ease 0s;
@@ -690,9 +691,7 @@ td.image img {
   border:1px solid #eee;
   padding:20px 20px;
   background: #FFFFFF;
-  /*	box-sizing:border-box;
-      -moz-box-sizing:border-box;
-      -webkit-box-sizing:border-box;*/
+
 }
 
 
