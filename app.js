@@ -48,8 +48,7 @@ require('./routes/route')(app, passport);
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
   replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };
 
-//mongoose.connect("mongodb://localhost:27017/brokercars");
-//mongoose.connect("mongodb://soeren:123456@ds033734.mongolab.com:33734/brokercars", options);
+
 var db = mongoose.connection;
 mongoose.connect("mongodb://naked:naked2010@ds033123.mongolab.com:33123/gametest", options);
 db.on("error", console.error);
