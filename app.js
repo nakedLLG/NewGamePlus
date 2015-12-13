@@ -138,7 +138,7 @@ app.get("/games/:id", function(req, res){
 });
 
 app.post("/games/", function(req, res){
-  GameModel.create(req.body, function(err, car){
+  GameModel.create(req.body, function(err, game){
     if (err){
       console.error(err);
     }
